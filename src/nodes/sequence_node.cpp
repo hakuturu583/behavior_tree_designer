@@ -23,7 +23,7 @@ unsigned int SequenceNodeDataModel::nPorts(PortType portType) const
 
 QWidget * SequenceNodeDataModel::embeddedWidget()
 {
-    return _lineEdit;
+    return nullptr;
 }
 
 void SequenceNodeDataModel::onTextEdited(QString const &string)

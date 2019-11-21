@@ -75,7 +75,7 @@ int main(int argc, char *argv[])
     QObject::connect(saveAction, &QAction::triggered,scene, &FlowScene::save);
     QObject::connect(loadAction, &QAction::triggered,scene, &FlowScene::load);
     QObject::connect(loadAction, &QAction::triggered,scene, validation);
-    mainWidget.setWindowTitle("Dataflow tools: simplest calculator");
+    mainWidget.setWindowTitle("Behavior Tree Designer");
     mainWidget.resize(800, 600);
     mainWidget.showNormal();
     return app.exec();

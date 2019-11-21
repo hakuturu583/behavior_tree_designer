@@ -42,7 +42,7 @@ class RootNodeDataModel : public NodeDataModel
         NodeDataType dataType(PortType, PortIndex) const;
         std::shared_ptr<NodeData> outData(PortIndex);
         void setInData(std::shared_ptr<NodeData> data, int) override;
-        QWidget * embeddedWidget() override { return _label; }
+        QWidget * embeddedWidget() override { return nullptr; }
     private:
         QLabel * _label;
 };
