@@ -20,6 +20,8 @@ using QtNodes::TypeConverterId;
 // Headers in this package
 #include <behavior_tree_designer/nodes/root_node.h>
 #include <behavior_tree_designer/nodes/sequence_node.h>
+#include <behavior_tree_designer/nodes/selector_node.h>
+#include <behavior_tree_designer/data/action_data.h>
 
 static void setStyle()
 {
@@ -47,8 +49,10 @@ static std::shared_ptr<DataModelRegistry> registerDataModels()
 {
     auto ret = std::make_shared<DataModelRegistry>();
     ret->registerModel<RootNodeDataModel>("RootNode");
-    ret->registerModel<SequenceNodeDataModel>("SequenceNode");
-    ret->registerModel<PriorityDataModel>("Priority");
+    ret->registerModel<SequenceNodeDataModel>("ControlFlowNode");
+    ret->registerModel<SelectorNodeDataModel>("ControlFlowNode");
+    ret->registerModel<PriorityDataModel>("Parameter");
+    ret->registerModel<ActionDataModel>("Parameter");
     return ret;
 }
 
