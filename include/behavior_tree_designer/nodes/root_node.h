@@ -8,21 +8,14 @@
 // Headers in Qt
 #include <QtWidgets/QLabel>
 
+// Headers in this package
+#include <behavior_tree_designer/data/result_data.h>
+
 using QtNodes::NodeData;
 using QtNodes::NodeDataType;
 using QtNodes::NodeDataModel;
 using QtNodes::PortType;
 using QtNodes::PortIndex;
-
-class RootNodeData : public NodeData
-{
-    public:
-        RootNodeData() {}
-        NodeDataType type() const override
-        {
-            return NodeDataType {"root_node", "Start"};
-        }
-};
 
 class RootNodeDataModel : public NodeDataModel
 {

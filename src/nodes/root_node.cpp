@@ -1,4 +1,4 @@
-#include <behavior_tree_designer/root_node.h>
+#include <behavior_tree_designer/nodes/root_node.h>
 
 RootNodeDataModel::RootNodeDataModel() : _label(new QLabel("Root Node"))
 {
@@ -23,7 +23,7 @@ unsigned int RootNodeDataModel::nPorts(PortType portType) const
 
 NodeDataType RootNodeDataModel::dataType(PortType, PortIndex) const
 {
-    return RootNodeData().type();
+    return ResultData().type();
 }
 
 std::shared_ptr<NodeData> RootNodeDataModel::outData(PortIndex)
@@ -34,7 +34,7 @@ std::shared_ptr<NodeData> RootNodeDataModel::outData(PortIndex)
 
 void RootNodeDataModel::setInData(std::shared_ptr<NodeData> data, int)
 {
-    auto root_node_data = std::dynamic_pointer_cast<RootNodeData>(data);
+    auto root_node_data = std::dynamic_pointer_cast<ResultData>(data);
     _label->clear();
     _label->adjustSize();
 }

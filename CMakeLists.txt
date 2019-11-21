@@ -24,7 +24,11 @@ include_directories(behavior_tree_designer
   ${NodeEditor_INCLUDE_DIRS}
 )
 
-add_executable(behavior_tree_designer src/main.cpp src/root_node.cpp)
+add_executable(behavior_tree_designer 
+  src/main.cpp 
+  src/nodes/root_node.cpp
+  src/nodes/sequence_node.cpp
+  src/data/priority_data.cpp)
 target_link_libraries(behavior_tree_designer ${NodeEditor_LIBRARIES})
 
 install(TARGETS

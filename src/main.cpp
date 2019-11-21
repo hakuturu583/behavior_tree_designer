@@ -18,7 +18,8 @@ using QtNodes::TypeConverterId;
 #include <QtWidgets/QMenuBar>
 
 // Headers in this package
-#include <behavior_tree_designer/root_node.h>
+#include <behavior_tree_designer/nodes/root_node.h>
+#include <behavior_tree_designer/nodes/sequence_node.h>
 
 static void setStyle()
 {
@@ -46,6 +47,8 @@ static std::shared_ptr<DataModelRegistry> registerDataModels()
 {
     auto ret = std::make_shared<DataModelRegistry>();
     ret->registerModel<RootNodeDataModel>("RootNode");
+    ret->registerModel<SequenceNodeDataModel>("SequenceNode");
+    ret->registerModel<PriorityDataModel>("Priority");
     return ret;
 }
 
